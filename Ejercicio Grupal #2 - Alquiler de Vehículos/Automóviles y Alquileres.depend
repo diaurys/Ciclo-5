@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1688089927 source:c:\users\diaur\desktop\pucmm\ciclo 5\fundamento programacion\automóviles y alquileres\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
