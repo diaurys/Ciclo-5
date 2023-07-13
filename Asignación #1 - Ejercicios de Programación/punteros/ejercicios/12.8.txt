@@ -1,0 +1,19 @@
+Qué diferencias se pueden encontrar entre estas dos declaraciones?
+float mt[5][5];
+float *m[5];
+
+float mt[5][5]; declara una matriz bidimensional de tipo float con dimensiones 5x5. Esto significa que mt es una matriz con 5 filas y 5 columnas, y cada elemento es un número de tipo float.
+
+float *m[5]; declara un array de 5 punteros a float. Esto significa que m es un array que contiene 5 elementos, y cada elemento es un puntero a un número de tipo float.
+
+Se podría hacer estas asignaciones?
+m = mt;
+m[1]=mt[1];
+m[2]=&mt[2][0];
+
+m = mt; no se puede hacer esta asignación directamente. La variable m es un array de punteros, mientras que mt es una matriz bidimensional. Estos dos tipos no son compatibles.
+
+m[1] = mt[1]; esta asignación no es válida. m[1] es un puntero a float, mientras que mt[1] es una fila completa de la matriz bidimensional mt. Estos dos tipos no son compatibles. 
+
+m[2] = &mt[2][0]; esta asignación es válida. &mt[2][0] es la dirección del primer elemento de la tercera fila de mt. Como m[2] es un puntero a float, se puede asignar esta dirección a m[2] sin problemas.
+

@@ -1,0 +1,20 @@
+Encuentra los errores en la siguiente declaración de estructura y posterior definición de variable:
+
+struct hormiga
+{
+int patas;
+char especie[41];
+float tiempo;
+} hormiga colonial[100];
+
+
+La declaración de la variable "hormiga" y el arreglo "colonial[100]" está fuera de lugar. Debería estar después de la definición de la estructura.
+
+struct hormiga
+{
+    int patas;
+    char especie[41];
+    float tiempo;
+};
+
+struct hormiga colonial[100];

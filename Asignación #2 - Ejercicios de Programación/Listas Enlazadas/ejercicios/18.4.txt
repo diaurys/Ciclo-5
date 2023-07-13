@@ -1,0 +1,36 @@
+Escribir una función que elimina el nodo que ocupa la posición i, siendo el nodo cabecera el que ocupa la posición cero
+
+typedef struct Nodo {
+  int dato;
+  struct Nodo* siguiente;
+} Nodo;
+
+void eliminarNodo(Nodo** cabeza, int posicion) {
+  if (*cabeza == NULL) {
+    printf("Error: La lista está vacía.\n");
+    return;
+  }
+  
+  Nodo* nodoEliminar = *cabeza;
+  Nodo* nodoAnterior = NULL;
+  int contador = 0;
+  
+  while (nodoEliminar != NULL && contador < posicion) {
+    nodoAnterior = nodoEliminar;
+    nodoEliminar = nodoEliminar->siguiente;
+    contador++;
+  }
+  
+  if (nodoEliminar == NULL) {
+    printf("Error: La posición especificada no existe.\n");
+    return;
+  }
+  
+  if (nodoAnterior == NULL) {
+    *cabeza = nodoEliminar->siguiente;
+  } else {
+    nodoAnterior->siguiente = nodoEliminar->siguiente;
+  }
+  
+  free(nodoEliminar);
+}

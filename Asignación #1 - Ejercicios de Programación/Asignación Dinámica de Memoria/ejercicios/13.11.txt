@@ -1,0 +1,12 @@
+Qué diferencias se pueden encontrar entre estas declaraciones?
+
+char *c[15];
+char **c;
+char c[15][12];
+
+char *c[15];: Esta declaración declara un arreglo de 15 punteros a caracteres (char). Cada elemento del arreglo c es un puntero que puede apuntar a una cadena de caracteres o a un carácter individual.
+
+char **c;: Esta declaración declara un puntero a un puntero a un carácter (char). En otras palabras, c es un puntero que puede apuntar a una cadena de caracteres o a un arreglo de cadenas de caracteres.
+
+char c[15][12];: Esta declaración declara un arreglo bidimensional de caracteres (char). El arreglo c tiene 15 filas y 12 columnas, lo que representa una matriz de caracteres. Cada elemento del arreglo c puede contener un carácter individual.
+

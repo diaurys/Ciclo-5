@@ -1,0 +1,51 @@
+
+Se tiene una lista simple de simple enlace, el campo de datos es un registro (estructura) con los campos de un alumno: Nombre, edad, sexo. Escribir una función para transformar la lista de tal forma que si el primer nodo es de un alumno de sexo masculino el siguiente sea de sexo femenino.
+
+typedef struct Alumno {
+  char nombre[50];
+  int edad;
+  char sexo;
+  struct Alumno* siguiente;
+} Alumno;
+
+void transformarLista(Alumno** cabeza) {
+  if (*cabeza == NULL || (*cabeza)->siguiente == NULL) {
+    return;
+  }
+  
+  Alumno* actual = *cabeza;
+  Alumno* siguiente = actual->siguiente;
+  
+  if (actual->sexo == 'M' && siguiente->sexo == 'F') {
+    return;
+  }
+  
+  Alumno* nodoMasculino = NULL;
+  Alumno* nodoFemenino = NULL;
+  
+  while (actual != NULL && siguiente != NULL) {
+    if (actual->sexo == 'M' && siguiente->sexo == 'F') {
+      nodoMasculino = actual;
+      nodoFemenino = siguiente;
+      break;
+    }
+    
+    actual = actual->siguiente;
+    siguiente = actual->siguiente;
+  }
+  
+  if (nodoMasculino == NULL || nodoFemenino == NULL) {
+    return;
+  }
+  
+  actual = *cabeza;
+  while (actual != NULL && actual->siguiente != nodoMasculino) {
+    actual = actual->siguiente;
+  }
+  
+  if (actual != NULL) {
+    actual->siguiente = nodoFemenino;
+    nodoMasculino->siguiente = nodoFemenino->siguiente;
+    nodoFemenino->siguiente = nodoMasculino;
+  }
+}

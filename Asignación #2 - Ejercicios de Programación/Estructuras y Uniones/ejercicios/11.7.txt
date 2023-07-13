@@ -1,0 +1,23 @@
+Declarar un tipo de dato estructural para representar a un alumno los campos que debe tener son nombre, curso, edad, dirección y notas de las 10 asignaturas. Declare otro tipo de estructura para representar a un profesor, los campos que debe tener su nombre asignaturas que imparte y dirección. Por último, declare una estructura que pueda representar a un profesor o a un alumno.
+
+typedef struct {
+  char nombre[50];
+  int curso;
+  int edad;
+  char direccion[100];
+  float notas[10];
+} Alumno;
+
+typedef struct {
+  char nombre[50];
+  char asignaturas[5][50];
+  char direccion[100];
+} Profesor;
+
+typedef struct {
+  int esProfesor;
+  union {
+    Alumno alumno;
+    Profesor profesor;
+  } datos;
+} Persona;

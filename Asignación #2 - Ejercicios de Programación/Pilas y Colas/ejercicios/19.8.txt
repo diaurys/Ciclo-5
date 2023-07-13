@@ -1,0 +1,20 @@
+Se tiene una pila de enteros positivos. Con las operaciones básicas de las pilas y colas escribir un fragmento de código para poner todos los elementos que son par de la pila en la cola
+
+
+void ponerParesEnCola(Pila* pila, Cola* cola) {
+  Pila pilaAuxiliar;
+  inicializarPila(&pilaAuxiliar);
+
+  while (!estaVaciaPila(pila)) {
+    int dato = desapilar(pila);
+    if (dato % 2 == 0) {
+      encolar(cola, dato);
+    }
+    apilar(&pilaAuxiliar, dato);
+  }
+
+  while (!estaVaciaPila(&pilaAuxiliar)) {
+    int dato = desapilar(&pilaAuxiliar);
+    apilar(pila, dato);
+  }
+}

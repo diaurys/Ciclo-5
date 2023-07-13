@@ -1,0 +1,8 @@
+Declare un tipo de dato para representar las estaciones del año:
+
+typedef enum {
+  PRIMAVERA,
+  VERANO,
+  OTOÑO,
+  INVIERNO
+} Estacion;

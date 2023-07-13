@@ -1,0 +1,28 @@
+Se tiene una lista simplemente enlazada de números reales. Escribir una función para obtener una lista doble ordenada respecto al campo dato, con los jugadores reales de la lista simple.
+
+typedef struct Nodo {
+  float dato;
+  struct Nodo* anterior;
+  struct Nodo* siguiente;
+} Nodo;
+
+void convertirListaSimpleEnDoble(Nodo** cabezaSimple, Nodo** cabezaDoble) {
+  Nodo* actualSimple = *cabezaSimple;
+  Nodo* anteriorDoble = NULL;
+  
+  while (actualSimple != NULL) {
+    Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
+    nuevoNodo->dato = actualSimple->dato;
+    nuevoNodo->anterior = anteriorDoble;
+    nuevoNodo->siguiente = NULL;
+    
+    if (anteriorDoble == NULL) {
+      *cabezaDoble = nuevoNodo;
+    } else {
+      anteriorDoble->siguiente = nuevoNodo;
+    }
+    
+    anteriorDoble = nuevoNodo;
+    actualSimple = actualSimple->siguiente;
+  }
+}

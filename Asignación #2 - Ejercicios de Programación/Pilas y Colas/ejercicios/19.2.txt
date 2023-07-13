@@ -1,0 +1,19 @@
+Escribir en el archivo pila.h los tipos de datos y los prototipos de la operaciones básicas sobre pilas con estructura dinámicas.
+
+typedef struct Nodo {
+  int dato;
+  struct Nodo* siguiente;
+} Nodo;
+
+typedef struct Pila {
+  Nodo* tope;
+} Pila;
+
+// Prototipos de funciones
+void inicializarPila(Pila* pila);
+int estaVacia(Pila* pila);
+void empujar(Pila* pila, int dato);
+int desempujar(Pila* pila);
+int obtenerTope(Pila* pila);
+
+#endif

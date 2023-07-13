@@ -1,0 +1,8 @@
+¿Cuáles son las diferencias entre las funciones malloc(), calloc() y realloc()?
+
+malloc(): Esta función se utiliza para asignar memoria dinámica en el montón. Toma un solo argumento, que es el tamaño en bytes de la memoria que se va a asignar. Devuelve un puntero al bloque de memoria asignado o NULL si no se pudo asignar memoria.
+
+calloc(): A diferencia de malloc(), calloc() se utiliza para asignar memoria dinámica e inicializarla a cero. Toma dos argumentos: el número de elementos y el tamaño de cada elemento. 
+
+realloc(): Esta función se utiliza para cambiar el tamaño de un bloque de memoria previamente asignado. Toma dos argumentos: un puntero al bloque de memoria existente y el nuevo tamaño deseado. 
+

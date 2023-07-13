@@ -1,0 +1,12 @@
+
+Encuentra los errores en las siguientes declaraciones y sentencias
+
+int n, *p;
+char**  dob= "Cadena de dos punteros";
+p = n*malloc(sizeof(int));
+
+En la declaración char** dob = "Cadena de dos punteros"; se está intentando asignar una cadena de caracteres ("Cadena de dos punteros") a un puntero a puntero a char (char**). Esto es incorrecto. Debería ser "char* dob" si deseas almacenar una cadena de caracteres simple.
+
+En la asignación p = n*malloc(sizeof(int)); se está intentando asignar el resultado de la multiplicación n * malloc(sizeof(int)) a un puntero (p). Esto es incorrecto. En su lugar, deberías simplemente asignar el resultado de malloc(sizeof(int)) a p.
+
+también es importante tener en cuenta que se debe liberar la memoria asignada dinámicamente utilizando free() cuando ya no se necesite.
