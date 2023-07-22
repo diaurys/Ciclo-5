@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1689132235 source:c:\users\diaur\desktop\pucmm\ciclo 5\fundamento programacion\asignación grupal #2 - centro académico\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
